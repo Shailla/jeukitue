@@ -1,3 +1,6 @@
 [submodule "moteur"]
 	path = moteur
 	url = https://code.google.com/p/jeukitue.moteur
+[submodule "centralisateur"]
+	path = centralisateur
+	url = https://code.google.com/p/jeukitue.centralisateur
