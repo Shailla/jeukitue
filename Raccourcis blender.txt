@@ -1,0 +1,19 @@
+a		Sélectionner / désélectionner tout
+b		Rectangle de sélection
+c		Cercle de sélection
+e		Extruder
+g		Mode déplacer
+m		Choix du calque
+r		Outil rotation
+s		Outil scale
+z		Basculer mode solide / wireframe
+TAB		Basculer mode édition / objet
+Ctrl	Rend le déplacement discret
+Shift-D	Dupliquer un objet
+Shift-C	Recentrer le curseur et la scène
+
+0		Basculer vue caméra / vue normale
+1		Vue de face
+3		Vue de droite
+5		Basculer mode projection / perspective
+7		Vue du dessus
