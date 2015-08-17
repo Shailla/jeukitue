@@ -25,12 +25,12 @@ using namespace JktUtils;
 namespace JktTest {
 
 DataTreeTest::DataTreeTest() :
-		Test("DataTreeTest"),
-		interlocutorClient0(SDL_CreateCond(), SDL_CreateMutex()),
-		interlocutorClient1(SDL_CreateCond(), SDL_CreateMutex()),
-		serverTree(),
-		client0Tree("client-0", &interlocutorClient0),
-		client1Tree("client-1", &interlocutorClient1) {
+				Test("DataTreeTest"),
+				interlocutorClient0(SDL_CreateCond(), SDL_CreateMutex()),
+				interlocutorClient1(SDL_CreateCond(), SDL_CreateMutex()),
+				serverTree(),
+				client0Tree("client-0", &interlocutorClient0),
+				client1Tree("client-1", &interlocutorClient1) {
 }
 
 DataTreeTest::~DataTreeTest() {
@@ -490,7 +490,6 @@ void DataTreeTest::clientTests() {
 	// Branche 1
 	Branche* branche1Client0S = serverTree.getBranche(branche1Client0FullId);
 	ASSERT_NOT_NULL(branche1Client0S, "Le serveur n'a pas recu la branche");
-//	logDataTreeElementId("Identifiant", branche1Client0S->getBrancheFullId());
 	ASSERT_EQUAL(branche1Client0Name, branche1Client0S->getBrancheName(), "La branche recue par le serveur est mal nommée");
 
 	// Valeur 1
@@ -710,6 +709,24 @@ void DataTreeTest::privateTreeTest() {
 		serverTree.getRoot().print(arbre, true, 0);
 		log(arbre, __LINE__);
 	}
+
+	{
+		ostringstream arbre;
+		arbre << "ARBRE CLIENT 0 :";
+		client0Tree.getRoot().print(arbre, true, 0);
+		log(arbre, __LINE__);
+	}
+
+	{
+		ostringstream arbre;
+		arbre << "ARBRE CLIENT 1 :";
+		client1Tree.getRoot().print(arbre, true, 0);
+		log(arbre, __LINE__);
+	}
+
+	serverTree.diffuseChangementsToClients();
+	client0Tree.receiveChangementsFromServer();
+	client1Tree.receiveChangementsFromServer();
 }
 
 void DataTreeTest::echangeDonneesClientServeur(int line, Interlocutor2& client) {

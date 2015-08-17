@@ -15,6 +15,7 @@
 using namespace std;
 
 #include "util/CollectionsUtils.h"
+#include "data/PrivateBranche.h"
 #include "data/Valeur.h"
 #include "data/ValeurInt.h"
 #include "data/ValeurFloat.h"
@@ -187,7 +188,14 @@ Branche* Branche::createSubBrancheForServer(const string& brancheName, DONNEE_TY
 		cerr << endl << "Type demandé inconnu";
 	}
 
-	Branche* newBranche = new Branche(this, ref, brancheName, resultType, revision, -1);
+	Branche* newBranche;
+
+	if(resultType == DONNEE_CLIENT) {
+		newBranche = new PrivateBranche(this, ref, brancheName, resultType, revision, -1);
+	}
+	else {
+		newBranche = new Branche(this, ref, brancheName, resultType, revision, -1);
+	}
 
 	_subBranchesById[ref] = newBranche;
 	_subBranchesByName[brancheName] = newBranche;
