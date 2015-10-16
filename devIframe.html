@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>
+				<h1>DEV IFRAME</h1>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h2>Please, register the user manually before click on CallBack
+					button</h2>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button onclick="callBack();">callback</button>
+			</td>
+		</tr>
+	</table>
+	
+	<script type="text/javascript">
+		function callBack() {
+			var urlfinal = location.search.substring(10);
+			var hash = location.hash;
+			//alert("UrlFinal : " + urlfinal + "hash : " + hash);
+			//window.parent.frames.location.href = urlfinal + hash;
+			//window.parent.frames.closeIframe();
+			var returnUrl = urlfinal + hash
+			parent.window.postMessage(returnUrl, "*");
+		};
+	</script>
+
+</body>
+</html>
