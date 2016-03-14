@@ -1,9 +1,6 @@
 [submodule "moteur"]
 	path = moteur
-	url = https://code.google.com/p/jeukitue.moteur
+	url = https://github.com/Shailla/jeukitue.moteur.git
 [submodule "centralisateur"]
 	path = centralisateur
-	url = https://code.google.com/p/jeukitue.centralisateur
-[submodule "maps"]
-	path = maps
-	url = https://code.google.com/p/jeukitue.maps
+	url = https://github.com/Shailla/jeukitue.centralisateur.git
