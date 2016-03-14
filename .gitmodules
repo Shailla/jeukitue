@@ -4,3 +4,7 @@
 [submodule "centralisateur"]
 	path = centralisateur
 	url = https://github.com/Shailla/jeukitue.centralisateur.git
+[submodule "maps"]
+	path = maps
+	url = https://github.com/Shailla/jeukitue.maps.git
+
