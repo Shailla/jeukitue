@@ -7,4 +7,6 @@
 [submodule "maps"]
 	path = maps
 	url = https://github.com/Shailla/jeukitue.maps.git
-
+[submodule "centre"]
+	path = centre
+	url = https://github.com/Shailla/jeukitue.centralisateur.centre.git
